@@ -1,0 +1,39 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile</title>
+  <link rel="stylesheet" href="css/userProfile.css">
+</head>
+<body>
+  <div class="container">
+    <h1>User Profile</h1>
+    <div id="profile-view">
+      <p><strong>Name:</strong> {{Customer_name}}</p>
+      <p><strong>Email:</strong> {{Customer_email}}</p>
+      <p><strong>Phone Number:</strong> {{Phone_number}}</p>
+      <p><strong>Date of Birth:</strong> {{DOB}}</p>
+      <button id="edit-btn">Edit Profile</button>
+    </div>
+
+    <div id="profile-edit" style="display: none;">
+      <form action="/user/updateProfile" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" name="Customer_name" value="{{Customer_name}}" required>
+
+        <label for="email">Email:</label>
+        <input type="email" name="Customer_email" value="{{Customer_email}}" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" name="Phone_number" value="{{Phone_number}}" required>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" name="DOB" value="{{DOB}}" required>
+
+        <button type="submit">Save Changes</button>
+        <button type="button" id="cancel-btn">Cancel</button>
+      </form>
+    </div>
+  </div>
+  <script src="js/userProfile.js"> </script>
+</body>
+</html>
